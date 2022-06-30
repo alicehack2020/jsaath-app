@@ -42,18 +42,21 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsAdapterVie
     @Override
     public void onBindViewHolder(@NonNull NewsAdapterViewHolder holder, int i) {
 
-//        try{
-//            Glide.with(context).load(AppConstants.MAIN_URL+getNews.get(i).getImgsrc()).placeholder(R.drawable.consultdoctorcard).into(holder.imageView);
-//        }catch (Exception e){
-//            Glide.with(context).load(R.drawable.consultdoctor).placeholder(R.drawable.consultdoctorcard).into(holder.imageView);
-//        }
 
-       // for(int j=0;j<getTodos.size();j++)
-       // {
-            //Log.e("dataaaa", "onBindViewHolder: "+getTodos.get(j).getTitle());
+
+           Glide.with(context).load(getTodos.get(i).getImageLink()).placeholder(R.drawable.collapse).into(holder.imageView);
             holder.title.setText(getTodos.get(i).getTitle());
-            holder.status.setText(Integer.toString(getTodos.get(i).getUserId()));
-       // }
+            holder.status.setText(Integer.toString(getTodos.get(i).getId()));
+            holder.playButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view)
+                {
+                    Intent intent = new Intent(context, VideoPlayer.class);
+                    intent.putExtra("videoLink",getTodos.get(i).getVideoLink());
+                    context.startActivity(intent);
+                }
+            });
+
 
 
      }
@@ -66,12 +69,14 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsAdapterVie
     public class NewsAdapterViewHolder extends RecyclerView.ViewHolder{
         ImageView imageView;
         TextView title,status;
-        Button readMore;
+        Button playButton;
+
         public NewsAdapterViewHolder(@NonNull View itemView) {
             super(itemView);
-            //imageView=itemView.findViewById(R.id.news_image);
+            imageView=itemView.findViewById(R.id.news_image);
             title=itemView.findViewById(R.id.title);
             status=itemView.findViewById(R.id.status);
+            playButton=itemView.findViewById(R.id.playButton);
 
         }
     }
