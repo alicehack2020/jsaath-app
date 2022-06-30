@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "427932930554",
+    "project_id": "saathhealth-f231b",
+    "storage_bucket": "saathhealth-f231b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427932930554:android:2b2d5ea3ac64e132cc1443",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427932930554-qlidpr2mftbq3mgdvqt1tndo2kam92d2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBAw1FOuOVnP_H-sL2XJbNwPzKv9CJZiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427932930554-qlidpr2mftbq3mgdvqt1tndo2kam92d2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
